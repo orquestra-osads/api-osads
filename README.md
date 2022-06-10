@@ -1,6 +1,8 @@
-# Projeto de gerenciamento de orquestras
+# Orquestra API 
 
-O projeto tem como foco o gerenciamento de uma orquestra, possibilitando a organização das partituras para os músicos, além de organizar a agenda e a lista de componentes da orquestra.
+## Projeto desenvolvido para o melhor gerenciamento de uma orquestra, contando com cadastro de inventário, músicos, alunos e eventos.
 
 
+### Desenvolvedor :
 
+###### Marcos Vitor Dias dos Santos - 2014290065 [Contato](https://github.com/marcosvitor1994)
