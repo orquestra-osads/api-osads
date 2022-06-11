@@ -14,6 +14,10 @@ const PreFormsSchema = new mongoose.Schema(
       type: String,
       required: [true, "Campo email deve ser preenchido"],
     },
+    senha: {
+      type: String,
+      required: [true, "Campo senha deve ser preenchido"],
+    },
     telefone: {
       type: String,
       required: [true, "Campo Telefone deve ser preenchido"],
@@ -28,7 +32,7 @@ const PreFormsSchema = new mongoose.Schema(
     },
     instrumento: {
       type: String,
-      required: [true, "Campo nome deve ser preenchido"],
+      required: [true, "Campo instrumento deve ser preenchido"],
     },
     endereco: {
       logradouro: {
