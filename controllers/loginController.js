@@ -1,22 +1,15 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-require('dotenv').config()
+require("dotenv").config();
 
 const { UserModel } = require("../models/usuarios");
 
 class LoginController {
-  /*
-    {
-        "email": ''
-        "senha": "(senha-normal)"
-    }
-    */
   /* code 150 .. 159 */
   async login(req, res, next) {
     try {
-      
-      const {email, senha} = req.body.data;
-      console.log(req.body.data)
+      const { email, senha } = req.body.data;
+      console.log(req.body.data);
 
       const userExiste = await UserModel.findOne({ email: email });
       if (!userExiste) {
@@ -25,7 +18,6 @@ class LoginController {
           code: 150,
           message: "Erro: Usuário não encontrado!",
         });
-        
       }
 
       if (!(await bcrypt.compare(senha, userExiste.senha))) {
@@ -35,7 +27,6 @@ class LoginController {
           message: "Erro: Senha inválida!",
         });
       }
-
 
       return res.json({
         user: {

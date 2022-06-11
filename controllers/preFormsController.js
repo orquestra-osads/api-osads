@@ -1,12 +1,11 @@
 const PreFormsModel = require("../models/preForms");
-const bcrypt = require('bcrypt');
-
+const bcrypt = require("bcrypt");
 
 class PreFormsController {
   async list(req, res) {
-
     try {
-      PreFormsModel.find({}).then((users) => {
+      PreFormsModel.find({})
+        .then((users) => {
           res.json({
             error: false,
             users,
@@ -25,7 +24,8 @@ class PreFormsController {
 
   async listOne(req, res) {
     try {
-      PreFormsModel.findById(req.params.id).then((user) => {
+      PreFormsModel.findById(req.params.id)
+        .then((user) => {
           res.json({
             error: false,
             user,
@@ -44,13 +44,10 @@ class PreFormsController {
 
   async create(req, res, next) {
     try {
-      console.log(req.body.preMusico.email)
+      console.log(req.body.preMusico.email);
 
-      if (req.body.preMusico.senha){
-        req.body.preMusico.senha = await bcrypt.hash(req.body.preMusico.senha, 8);
-      }
-
-      PreFormsModel.create(req.body.preMusico).then((user) => {
+      PreFormsModel.create(req.body.preMusico)
+        .then((user) => {
           return res.json({
             error: false,
             user,
@@ -79,7 +76,6 @@ class PreFormsController {
 
   async update(req, res, next) {
     try {
-      
       PreFormsModel.updateOne({ _id: req.params.id }, req.body)
         .then(() => {
           return res.json({
