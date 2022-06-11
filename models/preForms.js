@@ -26,6 +26,10 @@ const PreFormsSchema = new mongoose.Schema(
       type: String,
       required: [true, "Campo nome deve ser preenchido"],
     },
+    instrumento: {
+      type: String,
+      required: [true, "Campo nome deve ser preenchido"],
+    },
     endereco: {
       logradouro: {
         type: String,
