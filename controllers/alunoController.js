@@ -1,5 +1,5 @@
 const { AlunoModel, UserModel } = require("../models/usuarios");
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
 
 AlunoModel;
 
@@ -46,19 +46,24 @@ class alunoController {
 
   async create(req, res, next) {
     try {
-      console.log(req.body.envioAluno)
-      const emailExiste = await UserModel.findOne({ email: req.body.envioAluno.email });
+      console.log(req.body.envioAluno);
+      const emailExiste = await UserModel.findOne({
+        email: req.body.envioAluno.email,
+      });
 
       if (emailExiste) {
-				return res.status(400).json({
-					error: true,
-					code: 120,
-					message: "Error: Este e-mail já está cadastrado!"
-				});
-			};
+        return res.status(400).json({
+          error: true,
+          code: 120,
+          message: "Error: Este e-mail já está cadastrado!",
+        });
+      }
 
-      if (req.body.senha){
-        req.body.envioAluno.senha = await bcrypt.hash(req.body.envioAluno.senha, 8);
+      if (req.body.envioAluno.senha) {
+        req.body.envioAluno.senha = await bcrypt.hash(
+          req.body.envioAluno.senha,
+          8
+        );
       }
 
       AlunoModel.create(req.body.envioAluno)
@@ -91,7 +96,6 @@ class alunoController {
 
   async update(req, res, next) {
     try {
-
       if (req.body.email) {
         emailExiste = await UserModel.findOne({
           email: req.body.email,
