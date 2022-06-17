@@ -67,10 +67,10 @@ class alunoController {
       }
 
       AlunoModel.create(req.body.envioAluno)
-        .then((musico) => {
+        .then((aluno) => {
           return res.json({
             error: false,
-            musico,
+            aluno,
           });
         })
         .catch((err) => {
