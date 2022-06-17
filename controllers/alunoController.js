@@ -52,7 +52,7 @@ class alunoController {
       });
 
       if (emailExiste) {
-        return res.status(400).json({
+        return res.status(455).json({
           error: true,
           code: 120,
           message: "Error: Este e-mail já está cadastrado!",
