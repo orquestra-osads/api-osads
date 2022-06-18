@@ -26,11 +26,7 @@ routes.delete("/contato/:pid", authMidd(["Admin"]), ContatoController.delete);
 routes.post("/contato", ContatoController.create);
 
 // Eventos Calendário
-routes.get(
-  "/events",
-  authMidd(["Admin", "Musico", "Aluno"]),
-  EventsController.list
-);
+routes.get("/events", authMidd(["Admin", "Musico", "Aluno"]), EventsController.list);
 routes.post("/events", authMidd(["Admin"]), EventsController.create);
 routes.put("/events/:pid", authMidd(["Admin"]), EventsController.update);
 routes.delete("/events/:pid", authMidd(["Admin"]), EventsController.delete);
@@ -44,36 +40,16 @@ routes.delete("/forms/:id", authMidd(["Admin"]), PreFormsController.delete);
 
 // Inventário
 routes.get("/inventario", authMidd(["Admin"]), inventarioControllers.list);
-routes.get(
-  "/inventario/:id",
-  authMidd(["Admin"]),
-  inventarioControllers.listOne
-);
+routes.get("/inventario/:id", authMidd(["Admin"]), inventarioControllers.listOne);
 routes.post("/inventario", authMidd(["Admin"]), inventarioControllers.create);
-routes.put(
-  "/inventario/:id",
-  authMidd(["Admin"]),
-  inventarioControllers.update
-);
-routes.delete(
-  "/inventario/:id",
-  authMidd(["Admin"]),
-  inventarioControllers.delete
-);
+routes.put("/inventario/:id", authMidd(["Admin"]), inventarioControllers.update);
+routes.delete("/inventario/:id", authMidd(["Admin"]), inventarioControllers.delete);
 
 //Musicos
 routes.get("/musicos", authMidd(["Admin"]), musicoController.list);
-routes.get(
-  "/musicos/:pid",
-  authMidd(["Admin", "Musico"]),
-  musicoController.listOne
-);
+routes.get("/musicos/:pid", authMidd(["Admin", "Musico"]), musicoController.listOne);
 routes.post("/musicos", musicoController.create);
-routes.put(
-  "/musicos/:id",
-  authMidd(["Admin", "Musico"]),
-  musicoController.update
-);
+routes.put("/musicos/:id", authMidd(["Admin", "Musico"]), musicoController.update);
 routes.delete("/musicos/:id", authMidd(["Admin"]), musicoController.delete);
 
 //Alunos
@@ -84,16 +60,8 @@ routes.put("/alunos/:pid", authMidd(["Admin"]), alunoController.update);
 routes.delete("/alunos/:pid", authMidd(["Admin"]), alunoController.delete);
 
 // Profile
-routes.get(
-  "/profile/:id",
-  authMidd(["Admin", "Musico", "Aluno"]),
-  ProfileController.list
-);
-routes.put(
-  "/profile/:id",
-  authMidd(["Admin", "Musico", "Aluno"]),
-  ProfileController.update
-);
+routes.get("/profile/:id", authMidd(["Admin", "Musico", "Aluno"]), ProfileController.list);
+routes.put("/profile/:id", authMidd(["Admin", "Musico", "Aluno"]), ProfileController.update);
 
 // Pesquisa de usuários
 routes.get("/users", (req, res) => {
