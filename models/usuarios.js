@@ -4,23 +4,27 @@ const UserSchema = new mongoose.Schema(
   {
     nome: {
       type: String,
-      required: [true, "Campo nome deve ser preenchido"],
+      required: [false, "Campo nome deve ser preenchido"],
     },
     sexo: {
       type: String,
-      required: [true, "Campo sexo deve ser preenchido"],
+      required: [false, "Campo sexo deve ser preenchido"],
     },
     email: {
       type: String,
       required: [true, "Campo email deve ser preenchido"],
     },
+    senha: {
+      type: String,
+      required: [true, "Campo email deve ser preenchido"],
+    },
     telefone: {
       type: String,
-      required: [true, "Campo Telefone deve ser preenchido"],
+      required: [false, "Campo Telefone deve ser preenchido"],
     },
     dataNascimento: {
       type: String,
-      required: [true, "Campo Data de Nascimento deve ser preenchido"],
+      required: [false, "Campo Data de Nascimento deve ser preenchido"],
     },
     endereco: {
       logradouro: {

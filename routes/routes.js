@@ -12,8 +12,14 @@ const EventsController = require("../controllers/eventsController.js");
 const ContatoController = require("../controllers/contatoController.js");
 const PreFormsController = require("../controllers/preFormsController.js");
 const inventarioControllers = require("../controllers/inventarioController");
+const UserController = require("../controllers/userController");
+const userController = require("../controllers/userController");
+
 
 const routes = new Router();
+
+//trabalho pi
+routes.post("/usuario", userController.create);
 
 // LOGIN - Aluno, Músico, Admin
 routes.post("/login", LoginController.login);
