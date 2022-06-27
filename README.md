@@ -1,8 +1,12 @@
 # Orquestra API 
 
-## Projeto desenvolvido para o melhor gerenciamento de uma orquestra, contando com cadastro de inventário, músicos, alunos e eventos.
+Projeto desenvolvido para o melhor gerenciamento de uma orquestra, contando com cadastro de inventário, músicos, alunos e eventos.
 
+## Deploy em produção: 
 
-### Desenvolvedor :
+https://osads.herokuapp.com/
 
-###### Marcos Vitor Dias dos Santos - 2014290065 [Contato](https://github.com/marcosvitor1994)
+## Desenvolvedor: 
+
+###### Marcos Vitor - https://github.com/marcosvitor1994
+
